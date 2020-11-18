@@ -22,17 +22,3 @@ To serve the application from a dev server run the following commands:
     npm i
     ng build
     ng s -o
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Screenshots from the application
-
-![Contact Manager Desktop](https://raw.githubusercontent.com/ajtowf/styling-applications-with-angular-material/main/screenshots/1.png)
-
-![Contact Manager Forms](https://raw.githubusercontent.com/ajtowf/styling-applications-with-angular-material/main/screenshots/2.png)
-
-![Contact Manager Theming](https://raw.githubusercontent.com/ajtowf/styling-applications-with-angular-material/main/screenshots/3.png)
-
-![Contact Manager RTL Mobile](https://raw.githubusercontent.com/ajtowf/styling-applications-with-angular-material/main/screenshots/4.png)
