@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
+import { Stat } from '../../models/stat';
+import { StatService } from '../../services/stat.service';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 
@@ -17,6 +19,7 @@ export class SidenavComponent implements OnInit {
 
   public isScreenSmall: boolean;
 
+  stats: Observable<Stat[]>;
   users: Observable<User[]>;
   isDarkTheme: boolean = false;
   dir: string = 'ltr';
@@ -24,6 +27,7 @@ export class SidenavComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private userService: UserService,
+    private statService: StatService,
     private router: Router) { }
 
   @ViewChild(MatSidenav) sidenav: MatSidenav;
@@ -45,6 +49,10 @@ export class SidenavComponent implements OnInit {
 
     this.users = this.userService.users;
     this.userService.loadAll();
+
+    this.stats = this.statService.stats;
+    console.log('going to load all');
+    this.statService.loadAll();
 
     this.router.events.subscribe(() => {
       if (this.isScreenSmall) {

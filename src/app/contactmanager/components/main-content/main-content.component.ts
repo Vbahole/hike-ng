@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { Stat } from '../../models/stat';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { StatService } from '../../services/stat.service';
 
 @Component({
   selector: 'app-main-content',
@@ -11,9 +13,11 @@ import { UserService } from '../../services/user.service';
 export class MainContentComponent implements OnInit {
 
   user: User;
+  stat: Stat;
   constructor(
     private route: ActivatedRoute,
-    private service: UserService) { }
+    private service: UserService,
+    private statService: StatService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -29,6 +33,18 @@ export class MainContentComponent implements OnInit {
         }, 500)
 
       });
+
+      /*
+      this.stats = null;
+      this.statService.stats.subscribe(stats => {
+        if (stats.length == 0) return;
+
+        setTimeout(() => {
+          this.stats = this.statService.loadAll();
+        }, 500)
+
+      });
+      */
 
     })
   }
