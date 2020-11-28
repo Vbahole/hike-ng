@@ -1,8 +1,10 @@
 # my fork of this [angular material app](https://github.com/ajtowf/styling-applications-with-angular-material) from a pluralsight guy
 
 make the npm prod build push the dist folder to the ec2 instance
-
-
+to build run `npm run-script build-prod`  
+that will push code using scp out to ec2 at `home/ec2-user/hike-ng`  
+which is not the location it is served from which is `/usr/share/nginx/html/hike-ng`
+to get it over there `sudo cp -r /home/ec2-user/hike-ng /usr/share/nginx/html/hike-ng`
 
 
 

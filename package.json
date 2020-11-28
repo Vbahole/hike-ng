@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-prod": "ng build --prod",
+    "build": "ng build && sudo scp -r -i hike-kp.pem ./dist/angularmaterial ec2-user@ec2-34-201-181-141.compute-1.amazonaws.com:/home/ec2-user/hike-ng/",
+    "test": "ng test",
+    "build-prod": "ng build --prod && sudo scp -r -i hike-kp.pem ./dist/angularmaterial ec2-user@ec2-34-201-181-141.compute-1.amazonaws.com:/home/ec2-user/hike-ng/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
