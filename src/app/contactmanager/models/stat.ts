@@ -1,5 +1,3 @@
-export class Note {
-    id: number;
-    title: string;
-    date: Date;
+export class Stat {
+    totalHikeCount: number;
 }

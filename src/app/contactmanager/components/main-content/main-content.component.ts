@@ -33,7 +33,7 @@ export class MainContentComponent implements OnInit {
         }, 500)
       });
 
-      this.stats = null;
+      this.stat = null;
       this.statService.stats.subscribe(stats => {
         if (stats.length == 0) return;
 

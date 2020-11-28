@@ -21,9 +21,6 @@ export class StatService {
     return this._stats.asObservable();
   }
 
-  theStats() {
-    return this.dataStore.stats;
-  }
 
   loadAll() {
     const statsUrl = 'https://8tdvb17zme.execute-api.us-east-1.amazonaws.com/prod/stats'

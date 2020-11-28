@@ -1,4 +1,4 @@
-export class Stat {
+export class Note {
     id: number;
     title: string;
     date: Date;
