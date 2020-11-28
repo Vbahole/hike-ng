@@ -31,22 +31,16 @@ export class MainContentComponent implements OnInit {
         setTimeout(() => {
           this.user = this.service.userById(id);
         }, 500)
-
       });
 
-      /*
       this.stats = null;
       this.statService.stats.subscribe(stats => {
         if (stats.length == 0) return;
 
         setTimeout(() => {
-          this.stats = this.statService.loadAll();
+          this.stat = this.statService.theStats();
         }, 500)
-
       });
-      */
-
     })
   }
-
 }
