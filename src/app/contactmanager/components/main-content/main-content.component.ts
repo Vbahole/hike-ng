@@ -32,7 +32,7 @@ export class MainContentComponent implements OnInit {
           this.user = this.service.userById(id);
         }, 500)
       });
-
+/*
       this.stat = null;
       this.statService.stats.subscribe(stats => {
         if (stats.length == 0) return;
@@ -41,6 +41,7 @@ export class MainContentComponent implements OnInit {
           this.stat = this.statService.theStats();
         }, 500)
       });
+      */
     })
   }
 }

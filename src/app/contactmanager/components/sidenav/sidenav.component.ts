@@ -19,7 +19,7 @@ export class SidenavComponent implements OnInit {
 
   public isScreenSmall: boolean;
 
-  stats: Observable<Stat[]>;
+  stat: Stat;
   users: Observable<User[]>;
   isDarkTheme: boolean = false;
   dir: string = 'ltr';
@@ -50,9 +50,12 @@ export class SidenavComponent implements OnInit {
     this.users = this.userService.users;
     this.userService.loadAll();
 
-    this.stats = this.statService.stats;
     console.log('going to load all');
-    this.statService.loadAll();
+
+    this.statService.loadAll()
+      .subscribe((data: Stat) => this.stat = {
+        ...data
+    });
 
     this.router.events.subscribe(() => {
       if (this.isScreenSmall) {
