@@ -50,8 +50,6 @@ export class SidenavComponent implements OnInit {
     this.users = this.userService.users;
     this.userService.loadAll();
 
-    console.log('going to load all');
-
     this.statService.loadAll()
       .subscribe((data: Stat) => this.stat = {
         ...data
