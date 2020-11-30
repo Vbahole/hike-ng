@@ -32,7 +32,7 @@ export class MainContentComponent implements OnInit {
           this.user = this.service.userById(id);
         }, 500)
       });
-      
+
       this.statService.loadAll()
         .subscribe((data: Stat) => this.stat = {
           ...data
