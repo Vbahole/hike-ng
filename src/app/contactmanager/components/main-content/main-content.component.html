@@ -5,19 +5,23 @@
   <mat-card>
     <mat-card-header>
       <mat-icon mat-card-avatar svgIcon="{{user.avatar}}"></mat-icon>
-      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-title>{{ stat.totalHikeCount }} total hikes!</mat-card-title>
       <mat-card-subtitle>
-        BirthdayYeah {{ user.birthDate | date: 'd LLLL'}}
+        Keep It Up!!!
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-tab-group>
-        <mat-tab label="Bio">
+        <mat-tab label="Stats">
           <p>
-            {{user.bio}}
+            Total Distance hike - <b> {{ stat.totalDistanceKm }}</b> <br>
+            Total Time hiked (hours) - <b> {{ stat.totalDurationHours }} </b> <br>
+            Average Pace (min/km) - <b> {{ stat.AveragePaceMinutesPerKilometer }} </b> <br>
+            Most Hikes in One Day - <b> {{ stat.mostHikesInOneDay.hikes }} on {{ stat.mostHikesInOneDay.dates }} </b> <br>
+            Most Distance hiked in one day (km) - <b> {{ stat.mostKmsHikedInOneDay.kms | number : '1.2-2'  }} on {{ stat.mostKmsHikedInOneDay.date }} </b> <br>
           </p>
         </mat-tab>
-        <mat-tab label="Notes">
+        <mat-tab label="Other Shit">
           <app-notes [notes]="user.notes"></app-notes>
         </mat-tab>
       </mat-tab-group>
